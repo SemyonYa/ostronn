@@ -1,23 +1,35 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
+import { HomeRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
+import { StartComponent } from './start/start.component';
+import { ContactComponent } from './contact/contact.component';
+import { PriceComponent } from './price/price.component';
+import { AboutComponent } from './about/about.component';
+import { WhyComponent } from './why/why.component';
+import { GuaranteeComponent } from './guarantee/guarantee.component';
+
+
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
+    ReactiveFormsModule,
     IonicModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: HomePage
-      }
-    ])
+    HomeRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [
+    HomePage,
+    StartComponent,
+    PriceComponent,
+    AboutComponent,
+    WhyComponent,
+    GuaranteeComponent,
+    ContactComponent
+  ]
 })
 export class HomePageModule {}

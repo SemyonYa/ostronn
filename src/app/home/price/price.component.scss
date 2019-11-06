@@ -1,0 +1,15 @@
+// background-color: rgba(255,255,255,.3);
+ion-content {
+    --background: rgba(var(--ion-color-primary-rgb), 0);
+}
+
+ion-slide {
+
+    // background-color: rgba(255,255,255,1);
+    ion-list {
+        background-color: transparent;
+    }
+    ion-item {
+        --background: transparent;
+    }
+}

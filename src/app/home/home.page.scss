@@ -1,1 +1,27 @@
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 20px;
 
+    .menu-item {
+        padding: 3px 20px;
+        margin-top: 3px;
+        cursor: pointer;
+        font-weight: 600;
+        color: var(--ion-color-medium);
+        transition: .5s ease-out;
+        
+        &.menu-item-active {
+            border-top: solid 1px var(--ion-color-primary);
+            border-bottom: solid 1px var(--ion-color-primary);
+            color: var(--ion-color-primary);
+            transform: rotateX(360deg);
+        }
+    }
+}
