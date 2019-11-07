@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class PriceComponent implements OnInit {
   slideOpts = {
     slidesPerView: 3,
+    pager: false,
     coverflowEffect: {
       rotate: 50,
       stretch: 0,
@@ -15,9 +16,19 @@ export class PriceComponent implements OnInit {
       modifier: 1,
       slideShadows: true,
     },
-  }
+  };
+
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    const w = window.innerWidth;
+    console.log('w', w);
+    if (w < 1024) {
+      this.slideOpts.slidesPerView = 2;
+    }
+    if (w < 600) {
+      this.slideOpts.slidesPerView = 1;
+    }
+  }
 
 }

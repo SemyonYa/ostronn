@@ -12,12 +12,20 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup({
-      phone: new FormControl('', [ Validators.required, Validators.pattern(/^[0-9\+]{12}$/)])
+      phone: new FormControl('', [Validators.required, Validators.pattern(/^[0-9\+]{12}$/)])
     });
   }
 
-  send() {
-    alert('call ' + this.form.get('phone').value);
+  call() {
+    window.location.href = 'tel:+79999999999';
+  }
+
+  sendMail() {
+    window.location.href = 'mailto:info@ostro-nn.ru';
+  }
+
+  sendRequest() {
+    alert('Отправляем себе запрос на звонок по номеру ' + this.form.get('phone').value);
   }
 
 }

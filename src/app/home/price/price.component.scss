@@ -3,13 +3,23 @@ ion-content {
     --background: rgba(var(--ion-color-primary-rgb), 0);
 }
 
-ion-slide {
+ion-slides {
+    min-height: 100%;
+    --bullet-background: var(--ion-color-secondary);
+    --bullet-background-active: rgba(var(--ion-color-secondary-rgb), .4);
 
-    // background-color: rgba(255,255,255,1);
-    ion-list {
-        background-color: transparent;
+    ion-slide {
+        ion-list {
+            background-color: transparent;
+        }
+
+        ion-item {
+            --background: transparent;
+        }
     }
-    ion-item {
-        --background: transparent;
-    }
+}
+
+ion-card {
+    min-height: 100%;
+    margin: 20px;
 }

@@ -12,6 +12,8 @@ import { PriceComponent } from './price/price.component';
 import { AboutComponent } from './about/about.component';
 import { WhyComponent } from './why/why.component';
 import { GuaranteeComponent } from './guarantee/guarantee.component';
+import { InstrumentComponent } from './instrument/instrument.component';
+import { MovieModalComponent } from './movie-modal/movie-modal.component';
 
 
 
@@ -29,7 +31,12 @@ import { GuaranteeComponent } from './guarantee/guarantee.component';
     AboutComponent,
     WhyComponent,
     GuaranteeComponent,
-    ContactComponent
+    ContactComponent,
+    InstrumentComponent,
+    MovieModalComponent
+  ],
+  entryComponents: [
+    MovieModalComponent
   ]
 })
 export class HomePageModule {}

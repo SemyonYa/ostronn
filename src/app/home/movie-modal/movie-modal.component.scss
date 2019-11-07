@@ -1,0 +1,21 @@
+ion-content {
+    --background: transparent;
+
+}
+
+video {
+    width: 700px;
+    border-radius: 50%;
+}
+
+@media (max-width: 800px) and (orientation: portrait) {
+    video {
+        width: 350px;
+    }
+}
+
+@media (max-height: 800px) and (orientation: landscape) {
+    video {
+        width: 350px;
+    }
+}

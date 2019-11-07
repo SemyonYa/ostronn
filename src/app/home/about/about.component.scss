@@ -1,0 +1,24 @@
+ion-content {
+    --background: transparent;
+    // padding-top:
+}
+ion-card {
+    max-width: 1000px;
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 10px;
+
+    ion-card-header {
+        background-color: rgba(255,255,255,.9);
+        border-top: solid 10px var(--ion-color-secondary);
+        border-bottom: solid 2px var(--ion-color-primary);
+        color: var(--ion-color-primary);
+        font-weight: 600;
+    }
+    
+    ion-card-content {
+        padding: 20px 10px;
+        background-color: rgba(255,255,255,.9);
+        border-bottom: solid 10px var(--ion-color-secondary);
+    }
+}

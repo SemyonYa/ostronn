@@ -9,11 +9,13 @@
 <ion-content>
   <ion-router-outlet [ngStyle]="{backgroundImage: 'url(/assets/img/back.jpg)'}"></ion-router-outlet>
   <div class="menu">
-    <div class="menu-item" [routerLink]="['/home']" routerLinkActive="menu-item-active" [routerLinkActiveOptions]="{exact:true}">Главная</div>
-    <div class="menu-item" [routerLink]="['/home/price']" routerLinkActive="menu-item-active">Прайс</div>
-    <div class="menu-item" [routerLink]="['/home/about']" routerLinkActive="menu-item-active">Описание работы</div>
-    <div class="menu-item" [routerLink]="['/home/why']" routerLinkActive="menu-item-active">Почему профессиональная заточка?</div>
-    <div class="menu-item" [routerLink]="['/home/guarantee']" routerLinkActive="menu-item-active">Гарантия</div>
-    <div class="menu-item" [routerLink]="['/home/contact']"  routerLinkActive="menu-item-active">Контакты</div>
+    <div class="menu-item" *ngFor="let item of menu" [routerLink]="[item.url]" routerLinkActive="menu-item-active"
+      [routerLinkActiveOptions]="{exact:true}">{{item.title}}</div>
+    <ion-icon name="menu" size="large" color="secondary" class="menu-mobile-btn" (click)="showMobileMenu()"></ion-icon>
   </div>
+  <div class="menu-mobile" *ngIf="mobileIsActive">
+    <div class="menu-mobile-item" *ngFor="let item of menu" [routerLink]="[item.url]" (click)="hideMobileMenu()"
+      routerLinkActive="menu-mobile-item-active" [routerLinkActiveOptions]="{exact:true}">{{item.title}}</div>
+  </div>
+
 </ion-content>
