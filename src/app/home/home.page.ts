@@ -28,4 +28,12 @@ export class HomePage implements OnInit {
   hideMobileMenu() {
     this.mobileIsActive = false;
   }
+
+  call() {
+    window.location.href = 'tel:+79877539992';
+  }
+
+  send() {
+    window.location.href = 'mailto:order@ostro-nn.ru';
+  }
 }

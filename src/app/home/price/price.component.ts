@@ -12,8 +12,7 @@ export class PriceComponent implements OnInit {
     coverflowEffect: {
       rotate: 50,
       stretch: 0,
-      depth: 100,
-      modifier: 1,
+      depth: 100,      modifier: 1,
       slideShadows: true,
     },
   };
@@ -21,6 +20,19 @@ export class PriceComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.setSlideQ();
+    // window.onresize = this.setSlideQ;
+    // () => {
+    //   console.log('w, h', window.innerWidth, window.innerHeight);
+    // };
+  }
+
+  // resize(n) {
+  //   this.slideOpts.slidesPerView = n;
+  //   console.log(this.slideOpts);
+  // }
+
+  setSlideQ() {
     const w = window.innerWidth;
     console.log('w', w);
     if (w < 1024) {

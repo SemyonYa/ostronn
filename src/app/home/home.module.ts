@@ -14,6 +14,7 @@ import { WhyComponent } from './why/why.component';
 import { GuaranteeComponent } from './guarantee/guarantee.component';
 import { InstrumentComponent } from './instrument/instrument.component';
 import { MovieModalComponent } from './movie-modal/movie-modal.component';
+import { ShadowMoverDirective } from '../_directives/shadow-mover.directive';
 
 
 
@@ -33,7 +34,8 @@ import { MovieModalComponent } from './movie-modal/movie-modal.component';
     GuaranteeComponent,
     ContactComponent,
     InstrumentComponent,
-    MovieModalComponent
+    MovieModalComponent,
+    ShadowMoverDirective
   ],
   entryComponents: [
     MovieModalComponent

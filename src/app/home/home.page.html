@@ -17,5 +17,20 @@
     <div class="menu-mobile-item" *ngFor="let item of menu" [routerLink]="[item.url]" (click)="hideMobileMenu()"
       routerLinkActive="menu-mobile-item-active" [routerLinkActiveOptions]="{exact:true}">{{item.title}}</div>
   </div>
-
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="megaphone"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button title="+7 987 753 999 2">
+        <ion-icon name="call" (click)="call()"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button title="order@ostro-nn.ru">
+        <ion-icon name="paper-plane" (click)="send()"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button title="Форма обратной связи">
+          <ion-icon name="clipboard" (click)="send()"></ion-icon>
+        </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>
