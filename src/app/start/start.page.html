@@ -1,0 +1,19 @@
+<ion-content [ngStyle]="{backgroundImage: 'url(/assets/img/back.jpg)'}">
+  <!-- <h2 class="name">ОСТРО НН</h2> -->
+  <h1 class="title" id="title" [ngStyle]="{transition: '3s .5s'}">Профессиональная заточка<br />инструментов</h1>
+  <div class="back" appShadowMover></div>
+  <div class="start-menu">
+    <div class="start-menu-item top-left" [routerLink]="['/home/price']">
+      <span> Прайс </span>
+    </div>
+    <div class="start-menu-item top-right" [routerLink]="['/home/quarantee']">
+      <span> Почему мы </span>
+    </div>
+    <div class="start-menu-item bottom-left" [routerLink]="['/home/contact']">
+      <span> Как получить </span>
+    </div>
+    <div class="start-menu-item bottom-right" [routerLink]="['/home/about']" routerLinkActive="router-link-active" >
+      <span> Отзывы </span>
+    </div>
+  </div>
+</ion-content>

@@ -14,6 +14,7 @@ export class HomePage implements OnInit {
   ngOnInit() {
     this.menu
       .add({ title: 'Главная', url: '/home' })
+      .add({ title: 'Главная с шариками', url: '/start' })
       .add({ title: 'Прайс', url: '/home/price' })
       .add({ title: 'О заточке и гарантиях', url: '/home/about' })
       .add({ title: 'Инструменты', url: '/home/instrument' })
