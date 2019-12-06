@@ -6,6 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { StartPage } from './start.page';
+import { ShadowMoverDirective } from '../_directives/shadow-mover.directive';
+import { ShadowMover2Directive } from '../_directives/shadow-mover2.directive';
 
 const routes: Routes = [
   {
@@ -21,6 +23,9 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [StartPage]
+  declarations: [
+    StartPage,
+    ShadowMover2Directive
+  ]
 })
 export class StartPageModule {}
