@@ -5,9 +5,8 @@ import { ContactComponent } from './contact/contact.component';
 import { HomePage } from './home.page';
 import { PriceComponent } from './price/price.component';
 import { AboutComponent } from './about/about.component';
-import { WhyComponent } from './why/why.component';
-import { GuaranteeComponent } from './guarantee/guarantee.component';
 import { InstrumentComponent } from './instrument/instrument.component';
+import { TestimonialComponent } from './testimonial/testimonial.component';
 
 
 const homeRoutes: Routes = [
@@ -19,7 +18,7 @@ const homeRoutes: Routes = [
       { path: 'price', component: PriceComponent },
       { path: 'about', component: AboutComponent },
       { path: 'instrument', component: InstrumentComponent },
-      // { path: 'guarantee', component: GuaranteeComponent },
+      { path: 'testimonial', component: TestimonialComponent },
       { path: 'contact', component: ContactComponent }
     ]
   },

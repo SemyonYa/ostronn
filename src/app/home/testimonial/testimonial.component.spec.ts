@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WhyComponent } from './why.component';
+import { TestimonialComponent } from './testimonial.component';
 
-describe('WhyComponent', () => {
-  let component: WhyComponent;
-  let fixture: ComponentFixture<WhyComponent>;
+describe('TestimonialComponent', () => {
+  let component: TestimonialComponent;
+  let fixture: ComponentFixture<TestimonialComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WhyComponent ],
+      declarations: [ TestimonialComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WhyComponent);
+    fixture = TestBed.createComponent(TestimonialComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

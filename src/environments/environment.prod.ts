@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  host: 'http://ostro-nn-data.injini.ru'
+
 };

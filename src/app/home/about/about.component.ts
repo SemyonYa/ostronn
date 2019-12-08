@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/_services/data.service';
+import { Reason } from 'src/app/_models/reason';
 
 @Component({
   selector: 'app-about',
@@ -6,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements OnInit {
+  reasons: Reason[] = [];
+  constructor(private dataService: DataService) { }
 
-  constructor() { }
-
-  ngOnInit() {}
+  ngOnInit() {
+    this.dataService.getReasons()
+      .subscribe(
+        (data: Reason[]) => {
+          this.reasons = data;
+        }
+      );
+  }
 
 }

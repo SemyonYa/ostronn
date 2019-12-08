@@ -44,9 +44,13 @@
       </ion-card-header>
       <ion-card-content>
         <form *ngIf="form" [formGroup]="form" (ngSubmit)="sendRequest()">
-          <ion-item text-center lines="none">
-            <ion-label position="floating">Телефон (+7XXXXXXXXXX)</ion-label>
-            <ion-input formControlName="phone" type="tel"></ion-input>
+          <ion-item text-center lines="full">
+            <!-- <ion-label position="stacked">Телефон</ion-label> -->
+            <div [ngStyle]="{display: 'flex', justifyContent: 'center', width: '100%'}">
+              <span [ngStyle]="{color: '#999', fontWeight: 600, padding: '10px'}"> +7</span>
+              <ion-input formControlName="phone" type="tel" [ngStyle]="{textAlign: 'left'}" clearInput="true"
+                placeholder="9999999999" maxlength="10"></ion-input>
+            </div>
           </ion-item>
           <ion-button [disabled]="form.invalid" type="submit">
             <ion-icon slot="start" name="send"></ion-icon>

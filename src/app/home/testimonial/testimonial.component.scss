@@ -1,0 +1,21 @@
+ion-content {
+    --background: rgba(var(--ion-color-primary-rgb), 0);
+}
+.wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrap-inner {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+ion-card {
+    max-width: 400px;
+}

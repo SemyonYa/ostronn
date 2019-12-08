@@ -1,29 +1,17 @@
 <ion-header [ngStyle]="{opacity: 0}">
   <ion-toolbar color="light">
-    <ion-title>О заточке и гарантиях</ion-title>
+    <ion-title>Почему мы?</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content text-center>
-  <ion-card>
+    <h1 class="title-mobile-only">Почему мы?</h1>
+
+  <ion-card *ngFor="let reason of reasons">
     <ion-card-header>
-      <ion-card-title>Заточка</ion-card-title>
-      <ion-card-subtitle>Почему нужна профессиональная заточка?</ion-card-subtitle>
+      <ion-card-title [ngStyle]="{fontSize: '24px'}">{{reason.title}}</ion-card-title>
+      <!-- <ion-card-subtitle>Почему нужна профессиональная заточка?</ion-card-subtitle> -->
     </ion-card-header>
-    <ion-card-content>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum accusamus dolore ducimus non voluptate numquam
-      voluptates in sed hic! Deleniti, sequi! Dolorem molestiae exercitationem praesentium animi, quas alias nulla
-      possimus.
-      Officiis id dolorum quidem natus, autem commodi corporis dignissimos nobis nostrum quos sint veritatis totam
-      tempora exercitationem adipisci delectus omnis temporibus. Quidem, ducimus. Obcaecati voluptates fugiat quos animi
-      dignissimos aliquid.
-      Ab maiores quis iure quisquam molestias sit maxime! Magni perferendis quo unde amet illum dolores numquam ducimus
-      totam dolor, quibusdam distinctio sequi eius quia at itaque error consectetur modi. Velit.
-      Aspernatur, minima laudantium facilis provident iste quaerat nisi, exercitationem nulla blanditiis modi impedit
-      nihil quos facere culpa qui magnam eligendi. Praesentium, omnis maiores quas culpa corporis est excepturi sit
-      impedit.
-      Sit officia quidem facere assumenda illo excepturi voluptatibus facilis error velit quod. Laborum esse
-      perspiciatis laboriosam animi dolor expedita dolores a nostrum quos incidunt quo fuga sint ab, nam unde.
-    </ion-card-content>
+    <ion-card-content [ngStyle]="{fontSize: '18px'}">{{reason.description}}</ion-card-content>
   </ion-card>
   <ion-card>
     <ion-card-header>

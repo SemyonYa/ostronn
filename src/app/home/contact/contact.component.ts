@@ -12,7 +12,7 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup({
-      phone: new FormControl('', [Validators.required, Validators.pattern(/^[0-9\+]{12}$/)])
+      phone: new FormControl('', [Validators.required, Validators.maxLength(10), Validators.pattern(/^[0-9]{10}$/)])
     });
   }
 

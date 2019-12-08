@@ -11,7 +11,7 @@
     // --ion-font-family: 'Anonymous Pro', monospace;
     // --ion-font-family: 'Kurale', serif;
 
-     // --ion-font-family: 'Cormorant', serif;
+    // --ion-font-family: 'Cormorant', serif;
     --ion-font-family: 'Cormorant Infant', serif;
     // --ion-font-family: 'Cormorant SC', serif;
     // --ion-font-family: 'Cormorant Unicase', serif;
@@ -61,5 +61,18 @@
     .movie-modal {
         --height: 350px;
         --width: 350px;
+    }
+}
+
+.title-mobile-only {
+    display: none;
+    text-align: center;
+    color: var(--ion-color-secondary);
+    font-weight: 600;
+}
+
+@media (max-width: 1023px) {
+    .title-mobile-only {
+        display: block;
     }
 }

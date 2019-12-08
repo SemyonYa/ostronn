@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IMenuItem } from '../_models/menu-item';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-home',
@@ -16,8 +17,9 @@ export class HomePage implements OnInit {
       // .add({ title: 'Главная', url: '/home' })
       .add({ title: 'Главная с шариками', url: '/start' })
       .add({ title: 'Прайс', url: '/home/price' })
-      .add({ title: 'О заточке и гарантиях', url: '/home/about' })
+      .add({ title: 'Почему мы?', url: '/home/about' })
       .add({ title: 'Инструменты', url: '/home/instrument' })
+      .add({ title: 'Отзывы', url: '/home/testimonial' })
       .add({ title: 'Контакты', url: '/home/contact' });
     // .add({title: 'Почему профессиональная заточка?', url: '/home/why'})
   }
@@ -36,5 +38,9 @@ export class HomePage implements OnInit {
 
   send() {
     window.location.href = 'mailto:order@ostro-nn.ru';
+  }
+
+  doRefresh(e: EventEmitter) {
+    location.reload();
   }
 }

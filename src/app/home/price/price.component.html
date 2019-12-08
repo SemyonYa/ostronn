@@ -5,357 +5,24 @@
 </ion-header>
 
 <ion-content>
-  <!-- <h1 (click)="resize(3)">3</h1>
-  <h1 (click)="resize(2)">2</h1>
-  <h1 (click)="resize(1)">1</h1> -->
-  <ion-slides pager="true" [options]="slideOpts">
-    <ion-slide>
+    <h1 class="title-mobile-only">Прайс</h1>
+  <ion-slides pager="true" [options]="slideOpts3" *ngIf="currentSlideQuantity === 3">
+    <ion-slide *ngFor="let type of types">
       <ion-card color="light">
-        <img src="/assets/img/scissors-2.jpg" >
+        <img [src]="imgs[type.id % 3]">
         <ion-card-header>
-          <ion-card-subtitle>Заточка парикмахерских ножниц</ion-card-subtitle>
-          <ion-card-title>Ножницы</ion-card-title>
+          <ion-card-subtitle>Тип инструмента:</ion-card-subtitle>
+          <ion-card-title>{{type.name}}</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          <ion-item lines="none"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta et aperiam, ipsa
-            voluptatem optio
-            exercitationem at ipsum repellendus incidunt minus quibusdam in consequuntur deleniti. Dignissimos nesciunt
-            quas doloribus sequi ea.
-            Quis molestias, ea dicta sint fugiat sequi nemo blanditiis? Soluta cupiditate voluptates ipsam mollitia
-            nostrum nisi quam dolorem, laboriosam assumenda, animi commodi earum optio recusandae debitis porro
-            obcaecati
-            facilis error.
-          </ion-item>
+          <ion-item lines="none">{{type.description}}</ion-item>
           <ion-list>
-            <ion-item>
+            <ion-item *ngFor="let tool of type.tools">
               <ion-label>
                 <h2>
-                  Прямой угол
+                  {{tool.name}}
                   <ion-chip color="primary">
-                    <ion-label>400 руб.</ion-label>
-                  </ion-chip>
-                </h2>
-              </ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label>
-                <h2>
-                  Конвекс
-                  <ion-chip color="primary">
-                    <ion-label>400 руб.</ion-label>
-                  </ion-chip>
-                </h2>
-              </ion-label>
-            </ion-item>
-            <ion-item lines="none">
-              <ion-label>
-                <h2>
-                  Филировочные
-                  <ion-chip color="primary">
-                    <ion-label>450 руб.</ion-label>
-                  </ion-chip>
-                </h2>
-              </ion-label>
-            </ion-item>
-          </ion-list>
-        </ion-card-content>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card color="light">
-        <ion-img src="/assets/img/knife.jpg"></ion-img>
-        <ion-card-header>
-          <ion-card-subtitle>Заточка ножевых блоков</ion-card-subtitle>
-          <ion-card-title>Ножы</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-item lines="none"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta et aperiam, ipsa
-            voluptatem optio
-            exercitationem at ipsum repellendus incidunt minus quibusdam in consequuntur deleniti. Dignissimos nesciunt
-            quas doloribus sequi ea.
-            Quis molestias, ea dicta sint fugiat sequi nemo blanditiis? Soluta cupiditate voluptates ipsam mollitia
-            nostrum nisi quam dolorem, laboriosam assumenda, animi commodi earum optio recusandae debitis porro
-            obcaecati
-            facilis error.
-          </ion-item>
-          <ion-list>
-            <ion-item>
-              <ion-label>
-                <h2>
-                  Парикмахерские, грумерские
-                  <ion-chip color="primary">
-                    <ion-label>от 400 руб.</ion-label>
-                  </ion-chip>
-                </h2>
-              </ion-label>
-            </ion-item>
-            <ion-item lines="none">
-              <ion-label>
-                <h2>
-                  Для стрижки овец
-                  <ion-chip color="primary">
-                    <ion-label>от 600 руб.</ion-label>
-                  </ion-chip>
-                </h2>
-              </ion-label>
-            </ion-item>
-          </ion-list>
-        </ion-card-content>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card color="light">
-        <ion-img src="/assets/img/fil.jpg"></ion-img>
-        <ion-card-header>
-          <ion-card-subtitle>Заточка маникюрных инструментов</ion-card-subtitle>
-          <ion-card-title>Инструменты</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-item lines="none"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta et aperiam, ipsa
-            voluptatem optio
-            exercitationem at ipsum repellendus incidunt minus quibusdam in consequuntur deleniti. Dignissimos nesciunt
-            quas doloribus sequi ea.
-            Quis molestias, ea dicta sint fugiat sequi nemo blanditiis? Soluta cupiditate voluptates ipsam mollitia
-            nostrum nisi quam dolorem, laboriosam assumenda, animi commodi earum optio recusandae debitis porro
-            obcaecati
-            facilis error.
-          </ion-item>
-          <ion-list>
-            <ion-item>
-              <ion-label>
-                <h2>
-                  Пушер
-                  <ion-chip color="primary">
-                    <ion-label>от 150 руб.</ion-label>
-                  </ion-chip>
-                </h2>
-              </ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label>
-                <h2>
-                  Пинцет
-                  <ion-chip color="primary">
-                    <ion-label>от 150 руб.</ion-label>
-                  </ion-chip>
-                </h2>
-              </ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label>
-                <h2>
-                  Ножницы классические
-                  <ion-chip color="primary">
-                    <ion-label>от 150 руб.</ion-label>
-                  </ion-chip>
-                </h2>
-              </ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label>
-                <h2>
-                  Ножницы кутикульные
-                  <ion-chip color="primary">
-                    <ion-label>от 200 руб.</ion-label>
-                  </ion-chip>
-                </h2>
-              </ion-label>
-            </ion-item>
-            <ion-item lines="none">
-              <ion-label>
-                <h2>
-                  Щипчики
-                  <ion-chip color="primary">
-                    <ion-label>от 300 руб.</ion-label>
-                  </ion-chip>
-                </h2>
-              </ion-label>
-            </ion-item>
-          </ion-list>
-        </ion-card-content>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card color="light">
-        <ion-img src="/assets/img/scissors-2.jpg"></ion-img>
-        <ion-card-header>
-          <ion-card-subtitle>Заточка ножей</ion-card-subtitle>
-          <ion-card-title>Ножи</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-item lines="none"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta et aperiam, ipsa
-            voluptatem optio
-            exercitationem at ipsum repellendus incidunt minus quibusdam in consequuntur deleniti. Dignissimos nesciunt
-            quas doloribus sequi ea.
-            Quis molestias, ea dicta sint fugiat sequi nemo blanditiis? Soluta cupiditate voluptates ipsam mollitia
-            nostrum nisi quam dolorem, laboriosam assumenda, animi commodi earum optio recusandae debitis porro
-            obcaecati
-            facilis error.
-          </ion-item>
-          <ion-list>
-            <ion-item>
-              <ion-label>
-                <h2>
-                  Бытовые (10руб. - 10мм)
-                  <ion-chip color="primary">
-                    <ion-label>от 100 руб.</ion-label>
-                  </ion-chip>
-                </h2>
-              </ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label>
-                <h2>
-                  Туристические, охотничьи
-                  <ion-chip color="primary">
-                    <ion-label>от 250 руб.</ion-label>
-                  </ion-chip>
-                </h2>
-              </ion-label>
-            </ion-item>
-            <ion-item lines="none">
-              <ion-label>
-                <h2>
-                  Керамические
-                  <ion-chip color="primary">
-                    <ion-label>от 350 руб.</ion-label>
-                  </ion-chip>
-                </h2>
-              </ion-label>
-            </ion-item>
-          </ion-list>
-        </ion-card-content>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card color="light">
-        <ion-img src="/assets/img/fil.jpg"></ion-img>
-        <ion-card-header>
-          <ion-card-subtitle>Заточка ножей для мясорубки</ion-card-subtitle>
-          <ion-card-title>Мясорубка</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-item lines="none"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta et aperiam, ipsa
-            voluptatem optio
-            exercitationem at ipsum repellendus incidunt minus quibusdam in consequuntur deleniti. Dignissimos nesciunt
-            quas doloribus sequi ea.
-            Quis molestias, ea dicta sint fugiat sequi nemo blanditiis? Soluta cupiditate voluptates ipsam mollitia
-            nostrum nisi quam dolorem, laboriosam assumenda, animi commodi earum optio recusandae debitis porro
-            obcaecati
-            facilis error.
-          </ion-item>
-          <ion-list>
-            <ion-item>
-              <ion-label>
-                <h2>
-                  До 75 мм
-                  <ion-chip color="primary">
-                    <ion-label>от 400 руб.</ion-label>
-                  </ion-chip>
-                </h2>
-              </ion-label>
-            </ion-item>
-            <ion-item lines="none">
-              <ion-label>
-                <h2>
-                  Свыше 75 мм
-                  <ion-chip color="primary">
-                    <ion-label>от 600 руб.</ion-label>
-                  </ion-chip>
-                </h2>
-              </ion-label>
-            </ion-item>
-          </ion-list>
-        </ion-card-content>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card color="light">
-        <ion-img src="/assets/img/knife.jpg"></ion-img>
-        <ion-card-header>
-          <ion-card-subtitle>Заточка топора</ion-card-subtitle>
-          <ion-card-title>Топор</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-item lines="none"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta et aperiam, ipsa
-            voluptatem optio
-            exercitationem at ipsum repellendus incidunt minus quibusdam in consequuntur deleniti. Dignissimos nesciunt
-            quas doloribus sequi ea.
-            Quis molestias, ea dicta sint fugiat sequi nemo blanditiis? Soluta cupiditate voluptates ipsam mollitia
-            nostrum nisi quam dolorem, laboriosam assumenda, animi commodi earum optio recusandae debitis porro
-            obcaecati
-            facilis error.
-          </ion-item>
-          <ion-list>
-            <ion-item lines="none">
-              <ion-label>
-                <h2>
-                  <!-- Керамические      -->
-                  <ion-chip color="primary">
-                    <ion-label>от 350 руб.</ion-label>
-                  </ion-chip>
-                </h2>
-              </ion-label>
-            </ion-item>
-          </ion-list>
-        </ion-card-content>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card color="light">
-        <ion-img src="/assets/img/scissors-2.jpg"></ion-img>
-        <ion-card-header>
-          <ion-card-subtitle>Стамески</ion-card-subtitle>
-          <ion-card-title>Стамески</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-item lines="none"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta et aperiam, ipsa
-            voluptatem optio
-            exercitationem at ipsum repellendus incidunt minus quibusdam in consequuntur deleniti. Dignissimos nesciunt
-            quas doloribus sequi ea.
-            Quis molestias, ea dicta sint fugiat sequi nemo blanditiis? Soluta cupiditate voluptates ipsam mollitia
-            nostrum nisi quam dolorem, laboriosam assumenda, animi commodi earum optio recusandae debitis porro
-            obcaecati
-            facilis error.
-          </ion-item>
-          <ion-list>
-            <ion-item lines="none">
-              <ion-label>
-                <h2>
-                  <!-- Керамические      -->
-                  <ion-chip color="primary">
-                    <ion-label>от 100 руб.</ion-label>
-                  </ion-chip>
-                </h2>
-              </ion-label>
-            </ion-item>
-          </ion-list>
-        </ion-card-content>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card color="light">
-        <ion-img src="/assets/img/fil.jpg"></ion-img>
-        <ion-card-header>
-          <ion-card-subtitle>Свёрла</ion-card-subtitle>
-          <ion-card-title>Свёрла</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-item lines="none"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta et aperiam, ipsa
-            voluptatem optio
-            exercitationem at ipsum repellendus incidunt minus quibusdam in consequuntur deleniti. Dignissimos nesciunt
-            quas doloribus sequi ea.
-            Quis molestias, ea dicta sint fugiat sequi nemo blanditiis? Soluta cupiditate voluptates ipsam mollitia
-            nostrum nisi quam dolorem, laboriosam assumenda, animi commodi earum optio recusandae debitis porro
-            obcaecati
-            facilis error.
-          </ion-item>
-          <ion-list>
-            <ion-item lines="none">
-              <ion-label>
-                <h2>
-                  <ion-chip color="primary">
-                    <ion-label>от 30 руб.</ion-label>
+                    <ion-label>{{tool.price}} руб.</ion-label>
                   </ion-chip>
                 </h2>
               </ion-label>
@@ -365,4 +32,56 @@
       </ion-card>
     </ion-slide>
   </ion-slides>
+  <ion-slides pager="true" [options]="slideOpts2" *ngIf="currentSlideQuantity === 2">
+      <ion-slide *ngFor="let type of types">
+        <ion-card color="light">
+          <img [src]="imgs[type.id % 3]">
+          <ion-card-header>
+            <ion-card-subtitle>Тип инструмента:</ion-card-subtitle>
+            <ion-card-title>{{type.name}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item lines="none">{{type.description}}</ion-item>
+            <ion-list>
+              <ion-item *ngFor="let tool of type.tools">
+                <ion-label>
+                  <h2>
+                    {{tool.name}}
+                    <ion-chip color="primary">
+                      <ion-label>{{tool.price}} руб.</ion-label>
+                    </ion-chip>
+                  </h2>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+    <ion-slides pager="true" [options]="slideOpts1" *ngIf="currentSlideQuantity === 1">
+        <ion-slide *ngFor="let type of types">
+          <ion-card color="light">
+            <img [src]="imgs[type.id % 3]">
+            <ion-card-header>
+              <ion-card-subtitle>Тип инструмента:</ion-card-subtitle>
+              <ion-card-title>{{type.name}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item lines="none">{{type.description}}</ion-item>
+              <ion-list>
+                <ion-item *ngFor="let tool of type.tools">
+                  <ion-label>
+                    <h2>
+                      {{tool.name}}
+                      <ion-chip color="primary">
+                        <ion-label>{{tool.price}} руб.</ion-label>
+                      </ion-chip>
+                    </h2>
+                  </ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
 </ion-content>

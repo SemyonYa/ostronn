@@ -43,11 +43,12 @@
     &-item {
         flex-basis: 80%;
         padding: 3px 20px;
-        margin-top: 3px;
+        margin: 5px 0;
         cursor: pointer;
         font-weight: 600;
         color: var(--ion-color-medium);
         text-align: center;
+        font-size: 20px;
 
         &-active {
             border-top: solid 1px var(--ion-color-secondary);
