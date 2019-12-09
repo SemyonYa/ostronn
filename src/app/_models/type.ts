@@ -1,4 +1,5 @@
 import { Tool } from './tool';
+import { environment } from 'src/environments/environment';
 
 export class Type {
     id: number;
@@ -11,7 +12,7 @@ export class Type {
         this.id = Number.parseInt(id);
         this.name = name;
         this.description = description;
-        this.img = img;
+        this.img = (img) ? environment.host + '/web/images/' + img : '/assets/img/axe.png';
         this.tools = [];
     }
 

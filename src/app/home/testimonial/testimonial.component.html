@@ -10,11 +10,10 @@
     <div class="wrap-inner">
       <ion-card color="light" text-center *ngFor="let testi of testis" [ngStyle]="{borderRadius: '20px'}">
         <ion-card-header [ngStyle]="{borderBottom: 'solid 1px var(--ion-color-tertiary)'}">
-          <!-- <ion-card-subtitle>Lorem ipsum dolor sit amet consectetur.</ion-card-subtitle> -->
           <ion-card-title>{{testi.name}}</ion-card-title>
         </ion-card-header>
         <ion-card-content [ngStyle]="{paddingTop: '10px'}">{{testi.text}}</ion-card-content>
-        <img [src]="imgs[testi.id % 3]" [ngStyle]="{borderRadius: '0px', marginTop: '10px'}">
+        <img [src]="testi.img" [ngStyle]="{borderRadius: '0px', marginTop: '10px'}">
       </ion-card>
     </div>
   </div>

@@ -1,3 +1,5 @@
+import { environment } from 'src/environments/environment';
+
 export class Tool {
     id: number;
     name: string;
@@ -11,7 +13,7 @@ export class Tool {
         this.name = name;
         this.description = description;
         this.price = Number.parseInt(price);
-        this.img = img;
+        this.img = (img) ? environment.host + '/web/images/' + img : '/assets/img/axe.png';
         this.typeId = Number.parseInt(type_id);
     }
 }

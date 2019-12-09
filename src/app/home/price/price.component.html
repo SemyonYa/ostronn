@@ -9,7 +9,7 @@
   <ion-slides pager="true" [options]="slideOpts3" *ngIf="currentSlideQuantity === 3">
     <ion-slide *ngFor="let type of types">
       <ion-card color="light">
-        <img [src]="imgs[type.id % 3]">
+        <img [src]="type.img">
         <ion-card-header>
           <ion-card-subtitle>Тип инструмента:</ion-card-subtitle>
           <ion-card-title>{{type.name}}</ion-card-title>
@@ -35,7 +35,7 @@
   <ion-slides pager="true" [options]="slideOpts2" *ngIf="currentSlideQuantity === 2">
       <ion-slide *ngFor="let type of types">
         <ion-card color="light">
-          <img [src]="imgs[type.id % 3]">
+          <img [src]="type.img">
           <ion-card-header>
             <ion-card-subtitle>Тип инструмента:</ion-card-subtitle>
             <ion-card-title>{{type.name}}</ion-card-title>
@@ -61,7 +61,7 @@
     <ion-slides pager="true" [options]="slideOpts1" *ngIf="currentSlideQuantity === 1">
         <ion-slide *ngFor="let type of types">
           <ion-card color="light">
-            <img [src]="imgs[type.id % 3]">
+            <img [src]="type.img">
             <ion-card-header>
               <ion-card-subtitle>Тип инструмента:</ion-card-subtitle>
               <ion-card-title>{{type.name}}</ion-card-title>
