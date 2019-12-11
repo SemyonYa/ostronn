@@ -14,6 +14,7 @@ export class TestimonialComponent implements OnInit {
     '/assets/img/fil.jpg'
   ];
   testis: Testimonial[] = [];
+  x: number;
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
@@ -23,6 +24,7 @@ export class TestimonialComponent implements OnInit {
           this.testis = data;
         }
       );
+      this.x = this.testis.length;
   }
 
 }

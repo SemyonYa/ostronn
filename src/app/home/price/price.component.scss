@@ -5,8 +5,9 @@ ion-content {
 
 ion-slides {
     min-height: 100%;
+    padding-top: 20px;
     --bullet-background: var(--ion-color-secondary);
-    --bullet-background-active: rgba(var(--ion-color-secondary-rgb), .4);
+    --bullet-background-active: rgba(var(--ion-color-secondary-rgb), .9);
 
     ion-slide {
         ion-list {
@@ -15,6 +16,12 @@ ion-slides {
 
         ion-item {
             --background: transparent;
+            color: #111;
+            font-size: 18px;
+
+            ion-chip {
+                font-weight: 600;
+            }
         }
     }
 }

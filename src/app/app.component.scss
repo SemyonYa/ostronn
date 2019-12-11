@@ -76,3 +76,23 @@
         display: block;
     }
 }
+
+ion-slides.swiper-container-horizontal>.swiper-pagination-bullets {
+    bottom: unset;
+    top: 10px;
+}
+
+ion-slides {
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        opacity: .5;
+        border: solid 1px #ccc;
+        transition: .4s;
+        &-active {
+            opacity: 1;
+            border-color: var(--ion-color-secondary);
+        }
+    }
+
+}

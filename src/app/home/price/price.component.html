@@ -15,8 +15,8 @@
           <ion-card-title>{{type.name}}</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          <ion-item lines="none">{{type.description}}</ion-item>
-          <ion-list>
+          <ion-item lines="none" *ngIf="type.description">{{type.description}}</ion-item>
+          <ion-list *ngIf="type.tools;else loading">
             <ion-item *ngFor="let tool of type.tools">
               <ion-label>
                 <h2>
@@ -41,8 +41,8 @@
             <ion-card-title>{{type.name}}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <ion-item lines="none">{{type.description}}</ion-item>
-            <ion-list>
+            <ion-item lines="none" *ngIf="type.description">{{type.description}}</ion-item>
+            <ion-list *ngIf="type.tools;else loading">
               <ion-item *ngFor="let tool of type.tools">
                 <ion-label>
                   <h2>
@@ -67,8 +67,8 @@
               <ion-card-title>{{type.name}}</ion-card-title>
             </ion-card-header>
             <ion-card-content>
-              <ion-item lines="none">{{type.description}}</ion-item>
-              <ion-list>
+              <ion-item lines="none" *ngIf="type.description">{{type.description}}</ion-item>
+              <ion-list *ngIf="type.tools;else loading">
                 <ion-item *ngFor="let tool of type.tools">
                   <ion-label>
                     <h2>
@@ -85,3 +85,6 @@
         </ion-slide>
       </ion-slides>
 </ion-content>
+<ng-template #loading>
+  <ion-progress-bar type="indeterminate"></ion-progress-bar>
+</ng-template>

@@ -7,9 +7,11 @@
 </ion-header> -->
 
 <ion-content>
-  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+  <ion-refresher slot="fixed" pullFactor="1" pullMax="400" pullMin="250" snapbackDuration="100ms" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
+  <!-- <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+  </ion-refresher> -->
   <ion-router-outlet [ngStyle]="{backgroundImage: 'url(/assets/img/back.jpg)'}"></ion-router-outlet>
   <div class="menu">
     <div class="menu-item" *ngFor="let item of menu" [routerLink]="[item.url]" routerLinkActive="menu-item-active"

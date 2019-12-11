@@ -14,41 +14,40 @@
           <ion-avatar slot="start">
             <ion-icon name="phone-portrait" size="large" color="primary"></ion-icon>
           </ion-avatar>
-          <ion-label>+7 999 898 89 89</ion-label>
+          <ion-label> +7 930 056 69 13 </ion-label>
         </ion-item>
         <ion-item lines="full" (click)="sendMail()">
           <ion-avatar slot="start">
             <ion-icon name="send" size="large" color="primary"></ion-icon>
           </ion-avatar>
-          <ion-label>info@ostro-nn.ru</ion-label>
+          <ion-label> info@ostro-nn.ru </ion-label>
         </ion-item>
-        <ion-item lines="full">
+        <ion-item lines="full" (click)="vk()">
           <ion-avatar slot="start">
-            <ion-icon name="map" size="large" color="primary"></ion-icon>
+            <ion-icon name="logo-vk" size="large" color="primary"></ion-icon>
           </ion-avatar>
-          <ion-label>Н. Новгород, ул. Варварска, 32</ion-label>
+          <ion-label> /ostro_nn </ion-label>
         </ion-item>
-        <ion-item lines="none">
+        <ion-item lines="none" (click)="insta()">
           <ion-avatar slot="start">
-            <ion-icon name="beer" size="large" color="primary"></ion-icon>
-            <!-- <img src="/assets/img/back.jpg"> -->
+            <ion-icon name="logo-instagram" size="large" color="primary"></ion-icon>
           </ion-avatar>
-          <ion-label>Что-то ещё</ion-label>
+          <ion-label> /ostro_nn </ion-label>
         </ion-item>
       </ion-card-content>
     </ion-card>
 
     <ion-card text-center>
-      <ion-card-header>
+      <!-- <ion-card-header>
         <ion-card-title>Заказать звонок</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
+      </ion-card-header> -->
+      <ion-card-content [ngStyle]="{height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}">
         <form *ngIf="form" [formGroup]="form" (ngSubmit)="sendRequest()">
-          <ion-item text-center lines="full">
-            <!-- <ion-label position="stacked">Телефон</ion-label> -->
+          <h2 [ngStyle]="{fontSize: '20px', fontWeight: '500', color: '#262626', lineheight: '1.2'}">Заказать звонок</h2>
+          <ion-item text-center lines="none">
             <div [ngStyle]="{display: 'flex', justifyContent: 'center', width: '100%'}">
-              <span [ngStyle]="{color: '#999', fontWeight: 600, padding: '10px'}"> +7</span>
-              <ion-input formControlName="phone" type="tel" [ngStyle]="{textAlign: 'left'}" clearInput="true"
+              <span [ngStyle]="{color: '#999', fontWeight: 600, padding: '10px', borderTop: 'solid 1px var(--ion-color-primary)', borderBottom: 'solid 1px var(--ion-color-primary)'}"> +7</span>
+              <ion-input formControlName="phone" type="tel" [ngStyle]="{textAlign: 'center', borderTop: 'solid 1px var(--ion-color-primary)', borderBottom: 'solid 1px var(--ion-color-primary)'}" clearInput="true"
                 placeholder="9999999999" maxlength="10"></ion-input>
             </div>
           </ion-item>

@@ -17,7 +17,7 @@ export class ContactComponent implements OnInit {
   }
 
   call() {
-    window.location.href = 'tel:+79999999999';
+    window.location.href = 'tel:+79300566913';
   }
 
   sendMail() {
@@ -26,6 +26,14 @@ export class ContactComponent implements OnInit {
 
   sendRequest() {
     alert('Отправляем себе запрос на звонок по номеру ' + this.form.get('phone').value);
+  }
+
+  vk() {
+    window.location.href = 'https://vk.com/ostro_nn/';
+  }
+
+  insta() {
+    window.location.href = 'https://www.instagram.com/ostro_nn/';
   }
 
 }

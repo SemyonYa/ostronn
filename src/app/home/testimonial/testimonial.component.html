@@ -5,15 +5,27 @@
 </ion-header>
 
 <ion-content>
-  <h1 class="title-mobile-only">Отзывы</h1>
+  <h1 class="title-mobile-only">Отзывы  {{testis.length}}</h1>
   <div class="wrap">
-    <div class="wrap-inner">
+    <div class="wrap-inner" *ngIf="testis.length > 0">
       <ion-card color="light" text-center *ngFor="let testi of testis" [ngStyle]="{borderRadius: '20px'}">
         <ion-card-header [ngStyle]="{borderBottom: 'solid 1px var(--ion-color-tertiary)'}">
           <ion-card-title>{{testi.name}}</ion-card-title>
         </ion-card-header>
         <ion-card-content [ngStyle]="{paddingTop: '10px'}">{{testi.text}}</ion-card-content>
         <img [src]="testi.img" [ngStyle]="{borderRadius: '0px', marginTop: '10px'}">
+      </ion-card>
+    </div>
+    <div class="wrap-inner" *ngIf="testis.length == 0">
+      <ion-card color="light" text-center [ngStyle]="{borderRadius: '20px'}">
+        <ion-card-header [ngStyle]="{borderBottom: 'solid 1px var(--ion-color-tertiary)'}">
+          <ion-card-title>Отзывов пока нет</ion-card-title>
+        </ion-card-header>
+        <ion-card-content [ngStyle]="{paddingTop: '10px'}">
+          <p>Мы только начали работать, и пока не успели опубликовать отзывы.</p>
+          <p>Возможно именно Ваш отзыв будет первым...</p>
+        </ion-card-content>
+        <img src="/assets/img/nozhnitsyibritva2-2.png" [ngStyle]="{borderRadius: '0px', margin: '10px 25%', width: '50%', filter: 'drop-shadow(2px 2px 5px black)'}">
       </ion-card>
     </div>
   </div>

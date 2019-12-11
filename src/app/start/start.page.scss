@@ -8,16 +8,11 @@ ion-content {
     left: 50%;
     width: 30%;
     border: solid 7px var(--ion-color-secondary);
-    // border-bottom: solid 7px var(--ion-color-secondary);
     color: var(--ion-color-secondary);
-    // background-color: rgba(var(--ion-color-primary-rgb), .5);
     margin: 0;
     padding: 40px 20px;
     font-size: 30px;
     text-align: center;
-    // filter: opacity(0.2);
-    // filter: drop-shadow(2px 4px 6px rgba(0,0,0,.4)) opacity(.8);
-    // filter: grayscale(.1);
 }
 
 .back {
@@ -47,9 +42,7 @@ ion-content {
         width: 20vh;
         height: 20vh;
         font-size: 3vh;
-        // border-radius: 50%;
         color: var(--ion-color-secondary);
-        // border: solid 1px darkcyan;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -57,11 +50,11 @@ ion-content {
         background-size: contain;
         background-repeat: no-repeat;
         cursor: pointer;
-        filter: drop-shadow(1px 1px 2px black) brightness(0.5);
+        filter: drop-shadow(1px 1px 2px black) brightness(0.9);
         transition: 1s;
 
         &:hover {
-            filter: drop-shadow(1px 1px 6px black) brightness(0.95);
+            filter: drop-shadow(1px 1px 6px black) brightness(1);
         }
 
         &.top-left {
@@ -125,7 +118,7 @@ ion-content {
         &-item {
             width: 35vw;
             height: 20vw;
-            filter: drop-shadow(1px 1px 6px black);
+            // filter: drop-shadow(1px 1px 6px black);
             font-size: 5vw;
 
             span {
@@ -178,13 +171,27 @@ ion-content {
         }
     }
 }
+@media (orientation: portrait) and (max-width: 375px) {
+    .title {
+        top: calc(30% + 42vw);
+        left: 9%;
+        width: 82%;
+    }
+    .back {
+        background-size: 85%;
+    }
+}
 
 @media (orientation: landscape) and (max-height: 600px) {
     .title {
         top: 40%;
         width: 40%;
-        font-size: 20px;
-        padding: 15px;
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .back {
+        background-size: auto 85%;
     }
 
     .start-menu {
