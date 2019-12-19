@@ -7,9 +7,9 @@
 </ion-header> -->
 
 <ion-content>
-  <ion-refresher slot="fixed" pullFactor="1" pullMax="400" pullMin="250" snapbackDuration="100ms" (ionRefresh)="doRefresh($event)">
+  <!-- <ion-refresher slot="fixed" pullFactor="0.5" pullMax="400" pullMin="250" snapbackDuration="100ms" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
+  </ion-refresher> -->
   <!-- <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
   </ion-refresher> -->
   <ion-router-outlet [ngStyle]="{backgroundImage: 'url(/assets/img/back.jpg)'}"></ion-router-outlet>
@@ -30,12 +30,12 @@
       <ion-fab-button title="+7 987 753 999 2">
         <ion-icon name="call" (click)="call()"></ion-icon>
       </ion-fab-button>
-      <ion-fab-button title="order@ostro-nn.ru">
+      <ion-fab-button title="info@ostro-nn.ru">
         <ion-icon name="paper-plane" (click)="send()"></ion-icon>
       </ion-fab-button>
-      <ion-fab-button title="Форма обратной связи">
+      <!-- <ion-fab-button title="Форма обратной связи">
         <ion-icon name="clipboard" (click)="send()"></ion-icon>
-      </ion-fab-button>
+      </ion-fab-button> -->
     </ion-fab-list>
   </ion-fab>
 </ion-content>

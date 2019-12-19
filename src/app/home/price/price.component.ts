@@ -1,14 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataService } from 'src/app/_services/data.service';
 import { Type } from 'src/app/_models/type';
 import { Tool } from 'src/app/_models/tool';
+import { IonSlides } from '@ionic/angular';
+import { btnAnimation } from 'src/app/_animations/slider.animation';
 
 @Component({
   selector: 'app-price',
   templateUrl: './price.component.html',
   styleUrls: ['./price.component.scss'],
+  animations: [btnAnimation]
 })
 export class PriceComponent implements OnInit {
+  @ViewChild('priceSlider', { read: false, static: false }) priceSlider: IonSlides;
   currentSlideQuantity = 0;
   slideOpts = {
     slidesPerView: this.currentSlideQuantity
@@ -28,6 +32,8 @@ export class PriceComponent implements OnInit {
     '/assets/img/scissors-2.jpg',
     '/assets/img/fil.jpg'
   ];
+  nextNone = false;
+  prevNone = true;
 
   constructor(private dataService: DataService) { }
 
@@ -48,6 +54,7 @@ export class PriceComponent implements OnInit {
         }
       );
     window.onresize = this.setSlideQ.bind(this);
+    window.onorientationchange = this.setSlideQ.bind(this);
   }
 
   setSlideQ() {
@@ -69,7 +76,28 @@ export class PriceComponent implements OnInit {
       }
     }
   }
-  
+
+  checkNextPrev() {
+    this.priceSlider.isBeginning().then(
+      (p) => {
+        this.prevNone = p;
+      }
+    );
+    this.priceSlider.isEnd().then(
+      (n) => {
+        this.nextNone = n;
+      }
+    );
+  }
+
+  // nextSlide() {
+  //   this.priceSlider.slideNext();
+  // }
+
+  // previousSlide() {
+  //   this.priceSlider.slidePrev();
+  // }
+
   // reloadOnResize() {
   //   const w = window.innerWidth;
   //   if (w < 600) {

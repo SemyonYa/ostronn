@@ -30,3 +30,30 @@ ion-card {
     min-height: 100%;
     margin: 20px;
 }
+
+.slide {
+    position: fixed;
+    bottom: calc(50% - 24px);
+    border-radius: 50%;
+    // width: 30px;
+    // height: 30px;
+    z-index: 100;
+    box-shadow: 0 0 5px 2px rgba(var(--ion-color-secondary-rgb), .7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: rgba(var(--ion-color-primary-contrast-rgb), 0.6);
+    color: var(--ion-color-secondary);
+
+    &.slide-next {
+        right: 2px;
+    }
+
+    &.slide-previous {
+        left: 2px;
+    }
+
+    ion-icon {
+        font-size: 48px;
+    }
+}

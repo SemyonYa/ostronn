@@ -5,8 +5,40 @@
 </ion-header>
 
 <ion-content>
-    <h1 class="title-mobile-only">Прайс</h1>
-  <ion-slides pager="true" [options]="slideOpts3" *ngIf="currentSlideQuantity === 3">
+  <h1 class="title-mobile-only">Прайс</h1>
+  <div class="slide slide-next" *ngIf="!nextNone" @btnAnimation>
+    <ion-icon name="arrow-dropright" (click)="priceSlider.slideNext()"></ion-icon>
+  </div>
+  <div class="slide slide-previous" *ngIf="!prevNone" @btnAnimation>
+    <ion-icon name="arrow-dropleft" (click)="priceSlider.slidePrev()"></ion-icon>
+  </div>
+  <ion-slides pager="true" [options]="slideOpts3" *ngIf="currentSlideQuantity === 3" (ionSlideDidChange)="checkNextPrev()" #priceSlider>
+    <ion-slide *ngFor="let type of types">
+      <ion-card color="light">
+        <img [src]="type.img">
+        <ion-card-header>
+          <ion-card-subtitle>Тип инструмента:</ion-card-subtitle>
+          <ion-card-title>{{type.name}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item lines="none" *ngIf="type.description">{{type.description}}</ion-item>
+          <ion-list *ngIf="type.tools;else loading">
+            <ion-item lines="{{last ? 'none' : 'full'}}" *ngFor="let tool of type.tools; let last=last">
+              <ion-label>
+                <h2>
+                  {{tool.name}}
+                  <ion-chip color="primary">
+                    <ion-label>{{tool.price}} руб.</ion-label>
+                  </ion-chip>
+                </h2>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <ion-slides pager="true" [options]="slideOpts2" *ngIf="currentSlideQuantity === 2" (ionSlideDidChange)="checkNextPrev()" #priceSlider>
     <ion-slide *ngFor="let type of types">
       <ion-card color="light">
         <img [src]="type.img">
@@ -32,58 +64,32 @@
       </ion-card>
     </ion-slide>
   </ion-slides>
-  <ion-slides pager="true" [options]="slideOpts2" *ngIf="currentSlideQuantity === 2">
-      <ion-slide *ngFor="let type of types">
-        <ion-card color="light">
-          <img [src]="type.img">
-          <ion-card-header>
-            <ion-card-subtitle>Тип инструмента:</ion-card-subtitle>
-            <ion-card-title>{{type.name}}</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-item lines="none" *ngIf="type.description">{{type.description}}</ion-item>
-            <ion-list *ngIf="type.tools;else loading">
-              <ion-item *ngFor="let tool of type.tools">
-                <ion-label>
-                  <h2>
-                    {{tool.name}}
-                    <ion-chip color="primary">
-                      <ion-label>{{tool.price}} руб.</ion-label>
-                    </ion-chip>
-                  </h2>
-                </ion-label>
-              </ion-item>
-            </ion-list>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-    </ion-slides>
-    <ion-slides pager="true" [options]="slideOpts1" *ngIf="currentSlideQuantity === 1">
-        <ion-slide *ngFor="let type of types">
-          <ion-card color="light">
-            <img [src]="type.img">
-            <ion-card-header>
-              <ion-card-subtitle>Тип инструмента:</ion-card-subtitle>
-              <ion-card-title>{{type.name}}</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              <ion-item lines="none" *ngIf="type.description">{{type.description}}</ion-item>
-              <ion-list *ngIf="type.tools;else loading">
-                <ion-item *ngFor="let tool of type.tools">
-                  <ion-label>
-                    <h2>
-                      {{tool.name}}
-                      <ion-chip color="primary">
-                        <ion-label>{{tool.price}} руб.</ion-label>
-                      </ion-chip>
-                    </h2>
-                  </ion-label>
-                </ion-item>
-              </ion-list>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-      </ion-slides>
+  <ion-slides pager="true" [options]="slideOpts1" *ngIf="currentSlideQuantity === 1" (ionSlideDidChange)="checkNextPrev()" #priceSlider>
+    <ion-slide *ngFor="let type of types">
+      <ion-card color="light">
+        <img [src]="type.img">
+        <ion-card-header>
+          <ion-card-subtitle>Тип инструмента:</ion-card-subtitle>
+          <ion-card-title>{{type.name}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item lines="none" *ngIf="type.description">{{type.description}}</ion-item>
+          <ion-list *ngIf="type.tools;else loading">
+            <ion-item *ngFor="let tool of type.tools">
+              <ion-label>
+                <h2>
+                  {{tool.name}}
+                  <ion-chip color="primary">
+                    <ion-label>{{tool.price}} руб.</ion-label>
+                  </ion-chip>
+                </h2>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
 </ion-content>
 <ng-template #loading>
   <ion-progress-bar type="indeterminate"></ion-progress-bar>

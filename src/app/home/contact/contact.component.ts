@@ -17,7 +17,7 @@ export class ContactComponent implements OnInit {
   }
 
   call() {
-    window.location.href = 'tel:+79300566913';
+    window.location.href = 'tel:+79877539992';
   }
 
   sendMail() {

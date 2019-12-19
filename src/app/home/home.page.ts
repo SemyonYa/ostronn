@@ -15,13 +15,13 @@ export class HomePage implements OnInit {
   ngOnInit() {
     this.menu
       // .add({ title: 'Главная', url: '/home' })
-      .add({ title: 'Главная с шариками', url: '/start' })
+      .add({ title: 'Главная', url: '/start' })
       .add({ title: 'Прайс', url: '/home/price' })
       .add({ title: 'Почему мы?', url: '/home/about' })
-      .add({ title: 'Инструменты', url: '/home/instrument' })
       .add({ title: 'Отзывы', url: '/home/testimonial' })
       .add({ title: 'Контакты', url: '/home/contact' });
-    // .add({title: 'Почему профессиональная заточка?', url: '/home/why'})
+      // .add({title: 'Почему профессиональная заточка?', url: '/home/why'})
+      // .add({ title: 'Инструменты', url: '/home/instrument' })
   }
 
   showMobileMenu() {
@@ -37,7 +37,7 @@ export class HomePage implements OnInit {
   }
 
   send() {
-    window.location.href = 'mailto:order@ostro-nn.ru';
+    window.location.href = 'mailto:info@ostro-nn.ru';
   }
 
   doRefresh(e: EventEmitter) {
